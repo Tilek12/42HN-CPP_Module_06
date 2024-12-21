@@ -6,24 +6,39 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 16:22:44 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 22:12:14 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/21 22:28:55 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
+/*-------------------------------------*/
+/*  ScalarConverter Class constructor  */
+/*-------------------------------------*/
 ScalarConverter::ScalarConverter( void ) {}
 
+/*------------------------------------------*/
+/*  ScalarConverter Class copy constructor  */
+/*------------------------------------------*/
 ScalarConverter::ScalarConverter( const ScalarConverter& other ) { (void)other; }
 
+/*--------------------------------------------------*/
+/*  ScalarConverter Class copy assignment operator  */
+/*--------------------------------------------------*/
 ScalarConverter&	ScalarConverter::operator=( const ScalarConverter& other ) {
 
 	(void)other;
 	return *this;
 }
 
+/*------------------------------------*/
+/*  ScalarConverter Class destructor  */
+/*------------------------------------*/
 ScalarConverter::~ScalarConverter( void ) {}
 
+/*-------------------------------*/
+/*  Define _detectType function  */
+/*-------------------------------*/
 LiteralType	ScalarConverter::_detectType( const std::string& literal ) {
 
 	if ( literal == "nan" || literal == "nanf" )
@@ -45,6 +60,9 @@ LiteralType	ScalarConverter::_detectType( const std::string& literal ) {
 		return INVALID;
 }
 
+/*---------------------------------*/
+/*  Define _parseLiteral function  */
+/*---------------------------------*/
 double	ScalarConverter::_parseLiteral( const std::string& literal, LiteralType type ) {
 
 	switch ( type ) {
@@ -67,6 +85,9 @@ double	ScalarConverter::_parseLiteral( const std::string& literal, LiteralType t
 	}
 }
 
+/*------------------------------*/
+/*  Define _printChar function  */
+/*------------------------------*/
 void	ScalarConverter::_printChar( double value ) {
 
 	std::cout << YELLOW
@@ -83,10 +104,13 @@ void	ScalarConverter::_printChar( double value ) {
 				  << RESET;
 	else
 		std::cout << CYAN
-				  << "'" << static_cast<char>( value ) << "'\n"
+				  << "'" << static_cast<char>(value) << "'\n"
 				  << RESET;
 }
 
+/*-----------------------------*/
+/*  Define _printInt function  */
+/*-----------------------------*/
 void	ScalarConverter::_printInt( double value ) {
 
 	std::cout << YELLOW
@@ -101,10 +125,13 @@ void	ScalarConverter::_printInt( double value ) {
 				  << RESET;
 	else
 		std::cout << CYAN
-				  << static_cast<int>( value ) << std::endl
+				  << static_cast<int>(value) << std::endl
 				  << RESET;
 }
 
+/*-------------------------------*/
+/*  Define _printFloat function  */
+/*-------------------------------*/
 void	ScalarConverter::_printFloat( double value ) {
 
 	std::cout << YELLOW
@@ -122,10 +149,13 @@ void	ScalarConverter::_printFloat( double value ) {
 	else
 		std::cout << CYAN
 				  << std::fixed << std::setprecision( 1 )
-				  << static_cast<float>( value ) << "f\n"
+				  << static_cast<float>(value) << "f\n"
 				  << RESET;
 }
 
+/*--------------------------------*/
+/*  Define _printDouble function  */
+/*--------------------------------*/
 void	ScalarConverter::_printDouble( double value ) {
 
 	std::cout << YELLOW
@@ -147,6 +177,9 @@ void	ScalarConverter::_printDouble( double value ) {
 				  << RESET;
 }
 
+/*---------------------------*/
+/*  Define convert function  */
+/*---------------------------*/
 void	ScalarConverter::convert( const std::string& literal ) {
 
 	LiteralType	type = _detectType( literal );

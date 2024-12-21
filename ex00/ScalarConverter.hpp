@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:29:52 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 22:12:21 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/21 22:24:52 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 #include <cmath>
 #include "colors.hpp"
 
+/*-------------------------------*/
+/*  Define enums of LiteralType  */
+/*-------------------------------*/
 enum	LiteralType {
 	CHAR,
 	INT,
@@ -31,6 +34,9 @@ enum	LiteralType {
 	INVALID
 };
 
+/*--------------------------------*/
+/*  Define ScalarConverter class  */
+/*--------------------------------*/
 class	ScalarConverter {
 
 private:
