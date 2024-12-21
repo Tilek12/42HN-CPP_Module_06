@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:29:52 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 19:55:26 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/21 22:12:21 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iomanip>
 #include <limits>
 #include <cmath>
+#include "colors.hpp"
 
 enum	LiteralType {
 	CHAR,

@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 16:22:44 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 19:55:32 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/21 22:12:14 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 ScalarConverter::ScalarConverter( void ) {}
 
-ScalarConverter::ScalarConverter( const ScalarConverter& other ) { ( void )other; }
+ScalarConverter::ScalarConverter( const ScalarConverter& other ) { (void)other; }
 
 ScalarConverter&	ScalarConverter::operator=( const ScalarConverter& other ) {
 
-	( void )other;
+	(void)other;
 	return *this;
 }
 
@@ -49,7 +49,7 @@ double	ScalarConverter::_parseLiteral( const std::string& literal, LiteralType t
 
 	switch ( type ) {
 		case CHAR:
-			return static_cast<double>( literal[1] );
+			return static_cast<double>(literal[1]);
 		case INT:
 			return std::stoi( literal );
 		case FLOAT:
@@ -69,44 +69,82 @@ double	ScalarConverter::_parseLiteral( const std::string& literal, LiteralType t
 
 void	ScalarConverter::_printChar( double value ) {
 
+	std::cout << YELLOW
+			  << "char: "
+			  << RESET;
+
 	if ( std::isnan( value ) || value < 0 || value > 127 )
-		std::cout << "char: impossible\n";
-	else if ( !std::isprint( static_cast<int>( value ) ) )
-		std::cout << "char: Non displayable\n";
+		std::cout << PURPLE
+				  << "impossible\n"
+				  << RESET;
+	else if ( !std::isprint( static_cast<int>(value) ) )
+		std::cout << PURPLE
+				  << "Non displayable\n"
+				  << RESET;
 	else
-		std::cout << "char: '" << static_cast<char>( value ) << "'\n";
+		std::cout << CYAN
+				  << "'" << static_cast<char>( value ) << "'\n"
+				  << RESET;
 }
 
 void	ScalarConverter::_printInt( double value ) {
 
+	std::cout << YELLOW
+			  << "int: "
+			  << RESET;
+
 	if ( std::isnan( value )
 		|| value < std::numeric_limits<int>::min()
 		|| value > std::numeric_limits<int>::max() )
-		std::cout << "int: impossible\n";
+		std::cout << CYAN
+				  << "impossible\n"
+				  << RESET;
 	else
-		std::cout << "int: " << static_cast<int>( value ) << std::endl;
+		std::cout << CYAN
+				  << static_cast<int>( value ) << std::endl
+				  << RESET;
 }
 
 void	ScalarConverter::_printFloat( double value ) {
 
+	std::cout << YELLOW
+			  << "float: "
+			  << RESET;
+
 	if ( std::isnan( value ) )
-		std::cout << "float: nanf\n";
+		std::cout << CYAN
+				  << "nanf\n"
+				  << RESET;
 	else if ( std::isinf( value ) )
-		std::cout << ( value < 0 ? "-inff\n" : "+inff\n" );
+		std::cout << CYAN
+				  << ( value < 0 ? "-inff\n" : "+inff\n" )
+				  << RESET;
 	else
-		std::cout << "float: " << std::fixed << std::setprecision( 1 )
-				  << static_cast<float>( value ) << "f\n";
+		std::cout << CYAN
+				  << std::fixed << std::setprecision( 1 )
+				  << static_cast<float>( value ) << "f\n"
+				  << RESET;
 }
 
 void	ScalarConverter::_printDouble( double value ) {
 
+	std::cout << YELLOW
+			  << "double: "
+			  << RESET;
+
 	if ( std::isnan( value ) )
-		std::cout << "double: nan\n";
+		std::cout << CYAN
+				  << "nan\n"
+				  << RESET;
 	else if ( std::isinf( value ) )
-		std::cout << "double: " << ( value < 0 ? "-inf\n" : "+inf\n" );
+		std::cout << CYAN
+				  << ( value < 0 ? "-inf\n" : "+inf\n" )
+				  << RESET;
 	else
-		std::cout << "double: " << std::fixed << std::setprecision( 1 )
-				  << value << std::endl;
+		std::cout << CYAN
+				  << std::fixed << std::setprecision( 1 )
+				  << value << std::endl
+				  << RESET;
 }
 
 void	ScalarConverter::convert( const std::string& literal ) {
@@ -117,27 +155,13 @@ void	ScalarConverter::convert( const std::string& literal ) {
 	try {
 		value = _parseLiteral( literal, type );
 
-		switch ( type ) {
-		case CHAR:
-			_printChar( value );
-			break;
-		case INT:
-			_printInt( value );
-			break;
-		case FLOAT:
-		case DOUBLE:
-		case NOTANUMBER:
-		case MINUSINFINITY:
-		case PLUSINFINITY:
-			_printChar( value );
-			_printInt( value );
-			_printFloat( value );
-			_printDouble( value );
-			break;
-		default:
-			throw std::invalid_argument( "Invalid literal ");
-		}
+		_printChar( value );
+		_printInt( value );
+		_printFloat( value );
+		_printDouble( value );
 	} catch ( const std::exception& e ) {
-		std::cerr << "ERROR: " << e.what() << std::endl;
+		std::cerr << RED
+				  << "ERROR: " << e.what()
+				  << RESET << std::endl;
 	}
 }

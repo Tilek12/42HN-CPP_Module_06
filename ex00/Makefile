@@ -5,7 +5,8 @@ RESET	= \033[0m
 
 # Variables
 NAME = convert
-SRC =	main.cpp
+SRC =	main.cpp \
+		ScalarConverter.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
