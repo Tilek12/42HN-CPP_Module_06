@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:29:52 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 15:44:03 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/21 16:20:52 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 #include <string>
 #include <iostream>
+
+enum	LiteralType {
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE,
+	PSEUDO,
+	INVALID
+};
 
 class	ScalarConverter {
 
@@ -25,19 +34,16 @@ private:
 	ScalarConverter&	operator=( const ScalarConverter& other );
 	~ScalarConverter( void );
 
-	static void	printChar( double value );
-	static void	printInt( double value );
-	static void	printFloat( double value );
-	static void	printDouble( double value );
-	static bool	isPseudoLiteral( const std::string& literal );
-	static bool	isFloatLiteral( const std::string& literal );
-	static bool	isDoubleLiteral( const std::string& literal );
-	static bool	isIntLiteral( const std::string& literal );
-	static bool	isCharLiteral( const std::string& literal );
+	static LiteralType	detectType( const std::string& literal );
+	static double		parseLiteral( const std::string& literal, LiteralType type );
+	static void			printChar( double value );
+	static void			printInt( double value );
+	static void			printFloat( double value );
+	static void			printDouble( double value );
 
 public:
 
-	static void	convert( const std::string& value );
+	static void	convert( const std::string& literal );
 
 };
 
