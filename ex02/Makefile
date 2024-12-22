@@ -4,9 +4,9 @@ VIOLET	= \033[0;35m
 RESET	= \033[0m
 
 # Variables
-NAME = serialization
+NAME = realType
 SRC =	main.cpp \
-		Serializer.cpp
+		Base.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
