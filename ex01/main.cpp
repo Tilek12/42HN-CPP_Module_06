@@ -6,12 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:15:38 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 17:47:06 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:43:44 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
+/*-----------------*/
+/*  Main function  */
+/*-----------------*/
 int	main( void ) {
 
 	Data originalData = { 42, "Example", 3.14 };
@@ -29,7 +32,7 @@ int	main( void ) {
 	std::cout << YELLOW << "Deserialized Data Address: " << RESET
 			  << CYAN << deserializedData << std::endl << RESET;
 
-	std::cout << YELLOW << "raw: " << RESET
+	std::cout << YELLOW << "Raw integer: " << RESET
 			  << CYAN << raw << std::endl << RESET;
 
 	if ( &originalData == deserializedData ) {

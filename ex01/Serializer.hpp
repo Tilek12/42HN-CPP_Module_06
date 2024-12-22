@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:50:49 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 16:01:37 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:45:04 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include "colors.hpp"
 #include "Data.hpp"
 
+/*---------------------------*/
+/*  Define Serializer class  */
+/*---------------------------*/
 class	Serializer {
 
 public:

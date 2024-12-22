@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:03:51 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 15:05:34 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:44:17 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 
+/*----------------------*/
+/*  Define Data struct  */
+/*----------------------*/
 struct	Data {
 	int			id;
 	std::string	name;
