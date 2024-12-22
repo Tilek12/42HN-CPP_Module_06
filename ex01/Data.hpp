@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:50:49 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 15:06:32 by tkubanyc         ###   ########.fr       */
+/*   Created: 2024/12/22 15:03:51 by tkubanyc          #+#    #+#             */
+/*   Updated: 2024/12/22 15:05:34 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef DATA_HPP
+#define DATA_HPP
 
 #include <string>
-#include <iostream>
-#include "Data.hpp"
 
-class	Serializer {
-
-public:
-
-	Serializer( void ) = delete; // Non-instantiable class
-	Serializer( const Serializer& ) = delete;
-	Serializer&	operator=( const Serializer& ) = delete;
-	~Serializer( void ) = delete;
-
-	static uintptr_t	serialize( Data* ptr );
-	static Data*		deserialize( uintptr_t raw );
-
+struct	Data {
+	int			id;
+	std::string	name;
+	double		value;
 };
 
 #endif
