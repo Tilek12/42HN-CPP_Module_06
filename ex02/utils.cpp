@@ -6,12 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:26:41 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 20:41:53 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:32:36 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
+/*----------------------------*/
+/*  Define generate function  */
+/*----------------------------*/
 Base*	generate( void ) {
 
 	srand( static_cast<unsigned int>(time(0)) );
@@ -28,6 +31,9 @@ Base*	generate( void ) {
 	}
 }
 
+/*-------------------------------------------*/
+/*  Define identify function (with pointer)  */
+/*-------------------------------------------*/
 void	identify( Base* p ) {
 
 	if ( dynamic_cast<A*>(p) )
@@ -40,6 +46,9 @@ void	identify( Base* p ) {
 		std::cout << "Unknown type\n";
 }
 
+/*---------------------------------------------*/
+/*  Define identify function (with reference)  */
+/*---------------------------------------------*/
 void	identify( Base& p ) {
 
 	try {

@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:08:30 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 20:18:41 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:28:36 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <iostream>
 #include "colors.hpp"
 
+/*---------------------*/
+/*  Define Base class  */
+/*---------------------*/
 class	Base {
 
 public:

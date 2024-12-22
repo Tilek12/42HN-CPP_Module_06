@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:38:39 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 20:41:37 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:30:58 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 #include "B.hpp"
 #include "C.hpp"
 
+/*-------------*/
+/*  Functions  */
+/*-------------*/
 Base*	generate( void );
 void	identify( Base* p );
 void	identify( Base& p );
