@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:26:41 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 21:32:36 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/23 18:37:33 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ Base*	generate( void ) {
 void	identify( Base* p ) {
 
 	if ( dynamic_cast<A*>(p) )
-		std::cout << "A\n";
+		std::cout << GREEN << "A\n" << RESET;
 	else if ( dynamic_cast<B*>(p) )
-		std::cout << "B\n";
+		std::cout << CYAN << "B\n" << RESET;
 	else if ( dynamic_cast<C*>(p) )
-		std::cout << "C\n";
+		std::cout << PURPLE << "C\n" << RESET;
 	else
 		std::cout << "Unknown type\n";
 }
@@ -53,16 +53,16 @@ void	identify( Base& p ) {
 
 	try {
 		(void)dynamic_cast<A&>(p);
-		std::cout << "A\n";
+		std::cout << GREEN << "A\n" << RESET;
 	} catch ( std::bad_cast& ) {}
 
 	try {
 		(void)dynamic_cast<B&>(p);
-		std::cout << "B\n";
+		std::cout << CYAN << "B\n" << RESET;
 	} catch ( std::bad_cast& ) {}
 
 	try {
 		(void)dynamic_cast<C&>(p);
-		std::cout << "C\n";
+		std::cout << PURPLE << "C\n" << RESET;
 	} catch ( std::bad_cast& ) {}
 }

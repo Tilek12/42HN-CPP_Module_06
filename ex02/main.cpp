@@ -6,15 +6,11 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 20:45:46 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/22 21:27:26 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/23 18:38:08 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
-#include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
 
 /*-----------------*/
 /*  Main function  */
@@ -23,10 +19,10 @@ int	main( void ) {
 
 	Base*	base = generate();
 
-	std::cout << "Identified by pointer: ";
+	std::cout << YELLOW << "Identified by pointer: " << RESET;
 	identify( base );
 
-	std::cout << "Identified by reference: ";
+	std::cout << YELLOW << "Identified by reference: " << RESET;
 	identify( *base );
 
 	delete base;
