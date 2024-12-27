@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 16:22:44 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/12/21 22:28:55 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:30:44 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ LiteralType	ScalarConverter::_detectType( const std::string& literal ) {
 		return MINUSINFINITY;
 	else if ( literal == "+inf" || literal == "+inff" )
 		return PLUSINFINITY;
-	else if ( literal.size() == 3 && literal[0] == '\'' && literal[2] == '\'' )
+	else if ( literal.size() == 3
+			  && literal[0] == '\''
+			  && literal[2] == '\''
+			  && std::isprint( literal[1] ) )
 		return CHAR;
 	else if ( literal.find( 'f' ) != std::string::npos )
 		return FLOAT;
